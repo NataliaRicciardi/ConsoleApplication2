@@ -1,0 +1,18 @@
+------------------------Grade Calculator Result-------------------------
+
+Name: Nata
+
+Grade 1: 
+10 / 10 = 100.00
+Grade weight: 5%
+Weight achieved: 5%
+
+Grade 1: 
+10 / 15 = 66.67
+Grade weight: 5%
+Weight achieved: 3.3333335%
+
+------------------------------------------------------------------------
+Average Grade: 83.33
+Average Letter: B
+Weighted Sum: 8.333334% out of 10%

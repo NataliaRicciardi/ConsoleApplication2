@@ -1,0 +1,18 @@
+------------------------Grade Calculator Result-------------------------
+
+Name: Nat
+
+Grade 1: 
+10 / 10 = 100.00
+Grade weight: 5%
+Weight achieved: 5%
+
+Grade 2: 
+4 / 5 = 80.00
+Grade weight: 2%
+Weight achieved: 1.6%
+
+------------------------------------------------------------------------
+Average Grade: 90.00
+Average Letter: A
+Weighted Sum: 6.6% out of 7%
