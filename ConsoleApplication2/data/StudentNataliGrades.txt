@@ -1,0 +1,18 @@
+------------------------Grade Calculator Result-------------------------
+
+Name: Natali
+
+Grade 1: 
+10 / 15 = 66.67
+Grade weight: 5%
+Weight achieved: 3.33%
+
+Grade 1: 
+2 / 3 = 66.67
+Grade weight: 5%
+Weight achieved: 3.33%
+
+------------------------------------------------------------------------
+Average Grade: 66.67
+Average Letter: D
+Weighted Sum: 6.3333335% out of 10%

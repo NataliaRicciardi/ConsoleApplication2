@@ -9,8 +9,12 @@ float calculateGrade(int numerator, int denominator) {
 	return (numerator / static_cast<float>(denominator)) * 100.0;
 }
 
-float calculateAvg(const std::vector<float>& grades) {
-	float sum = std::accumulate(grades.begin(), grades.end(), 0.0); // accumulate function
+float calculateAvg(const std::vector<GradeResult>& grades) {
+	float sum = std::accumulate(grades.begin(), grades.end(), 0.0f,
+		[](auto sum, const GradeResult& grade) {
+			return sum + grade.percent;
+		}
+	); // accumulate function insted of loop
 
 	return sum / grades.size();
 }

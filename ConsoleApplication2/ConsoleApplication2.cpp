@@ -13,14 +13,12 @@ int main()
 {
 	std::string name;
 	std::vector<Grade> fractionals;
-	std::vector<float> grades;
-	std::vector<float> weighted;
 	std::vector<GradeResult> results;
 	std::string outputString;
 
 	printColored("----------- Grade Calculator -----------\n ", Color::Default); // title
 	printColored("What's your name?\n Enter here: ", Color::Green);
-	std::cin >> name;
+	std::getline(std::cin >> std::ws, name);
 
 	outputString = std::format("\nHello, Student {}!\nEnter your grades, and pick the denominator (e.g. 90/100).\n", name);
 
@@ -181,8 +179,6 @@ int main()
 		outputString = std::format("\nCalculated {}: {:.2f}%.\n", index, grade);
 
 		printColored(outputString, Color::Cyan);
-		
-		grades.push_back(grade);
 
 		GradeResult result;
 		result.base = frac;
@@ -194,8 +190,6 @@ int main()
 			outputString = std::format("\n  Calculated Weighted {}: {:.2f}% earned out of {}%\n", index, weightedGrade, frac.weight);
 
 			printColored(outputString, Color::Default);
-			
-			weighted.push_back(weightedGrade);
 
 			result.weightedPercent = weightedGrade;
 		}
@@ -208,7 +202,7 @@ int main()
 		index++;
 	}
 
-	float avg = calculateAvg(grades);
+	float avg = calculateAvg(results);
 
 	outputString = std::format("\nThe average of your grades is {:.2f}%.\n", avg);
 	printColored(outputString, Color::Cyan);
@@ -227,9 +221,13 @@ int main()
 
 	// weighted grades
 	
-	float sumWeightedGrades;
+	float sumWeightedGrades = 0;
 	if (weightedGrades) {
-		sumWeightedGrades = std::accumulate(weighted.begin(), weighted.end(), 0.0);
+		sumWeightedGrades = std::accumulate(results.begin(), results.end(), 0.0f,
+			[](float sum, const GradeResult& result) {
+				return sum + result.weightedPercent;
+			}
+		);
 		
 		outputString = std::format("\nYou've achieved {:.2f}% of your final course grade from the {}% of assessments completed so far.\n", sumWeightedGrades, weightsSum);
 		printColored(outputString, Color::Cyan);
